@@ -1,0 +1,54 @@
+.haqqimizda-container {
+  display: flex;
+  justify-content: center; /* Yatayda merkezleme */
+  align-items: center; /* Dikeyde merkezleme */
+  min-height: 100vh; /* Tam yükseklik */
+}
+
+  
+  .image-container1 {
+    position: relative;
+    width: 100%; /* Genişliği %100 yap */
+    max-width: 800px; /* Maksimum genişliği ayarlayın */
+    height: 500px; /* Yükseklik ayarlandı */
+    margin-left: 20px; /* Sağa yakınlaştırmak için margin ekle */
+    overflow: hidden;
+  }
+  
+  .slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmin görünümünü düzenler */
+    border-radius: 8px; /* Kenarları yuvarlar */
+  }
+  
+  .text-container {
+    max-width: 800px; /* Maksimum genişlik ayarlandı */
+    margin-right: 20px; /* Sola yakınlaştırmak için margin ekle */
+  }
+  h2 {
+    color: #242627; /* Açık bir ton renk */
+    font-weight: bold; /* Kalın yazı */
+    font-family: 'Arial', sans-serif; /* Yazı tipi */
+    border-radius: 8px; /* Yuvarlak kenarlar */
+  }
+  
+  body, p {
+    color: #0f0f0f; /* Açık bir ton renk */
+    font-weight: 400; /* Normal kalınlık */
+    font-family: 'Arial', sans-serif; /* Yazı tipi */
+    border-radius: 8px; /* Yuvarlak kenarlar */
+    max-width: 100%; 
+  }
+  .about-container {
+    background-image: url('./photos/sekil.jpg'); /* Arka plan resmi */
+    background-size: cover; /* Resmin alanı kaplamasını sağlar */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat; /* Resmin tekrarlanmamasını sağlar */
+    min-height: 100vh; /* Yüksekliği ekranın tamamı kadar ayarla */
+    padding: 20px; /* İçerik için boşluk ekle */
+    display: flex; /* Flexbox düzeni kullan */
+    justify-content: center; /* İçerikleri yatayda ortalar */
+    align-items: center; /* İçerikleri dikeyde ortalar */
+  }
+  

@@ -1,0 +1,26 @@
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .icon-item {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .icon-item i {
+    font-size: 40px; /* İkon boyutu */
+    color: #3f51b5; /* İkon rengi (isteğe bağlı) */
+  }
+  
+  .icon-item h6 {
+    margin: 10px 0 5px; /* Başlık için üst ve alt boşluk */
+  }
+  
+  .icon-item p {
+    margin: 5px 0; /* Açıklamalar için üst ve alt boşluk */
+    color: #555; /* Yazı rengi */
+  }
+  

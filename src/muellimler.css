@@ -1,0 +1,43 @@
+.carousel-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  position: relative;
+  margin: 10px;
+  transition: transform 0.3s ease; /* Hover efekti */
+}
+
+.image-container:hover {
+  transform: scale(1.1); /* Üzerine gelindiğinde büyütme */
+  z-index: 10; /* Öne çıkma */
+}
+
+.image-container img {
+  width: 150px; /* Sabit genişlik */
+  height: 150px; /* Sabit yükseklik */
+  object-fit: cover; /* Resmin düzgün kırpılması için */
+  border-radius: 10px; /* Köşeleri yuvarlama */
+  transition: box-shadow 0.3s ease; /* Hover'da gölge efekti */
+}
+
+.image-container:hover img {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hover gölgesi */
+}
+
+.image-container .MuiTypography-subtitle1 {
+  margin-top: 8px; /* Yazının resimden sonra boşluk bırakması */
+}
+body {
+  display: block; /* Resmin etrafındaki boşlukları kaldırır */
+  max-width: 100%; /* Ekran boyutuna göre ölçeklendirir */
+  height: auto; /* Oranları korur */
+}
