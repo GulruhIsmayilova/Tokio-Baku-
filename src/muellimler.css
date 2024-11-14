@@ -1,43 +1,65 @@
-.carousel-wrapper {
-  text-align: center;
-  margin-top: 20px;
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Başlangıç */
+  }
+  100% {
+    transform: translateX(-100%); /* Bitiş - Tam kaydır */
+  }
 }
 
 .carousel-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 20px;
+  padding: 20px;
+  background: none;
+  animation: slide 120s infinite linear; /* 120 saniyede tamamla ve sonsuz tekrarla */
+}
+
+.carousel-container:hover {
+  animation-play-state: paused; /* Fare üzerine gelindiğinde durdur */
 }
 
 .image-container {
   position: relative;
-  margin: 10px;
-  transition: transform 0.3s ease; /* Hover efekti */
+  margin: 0 65px; /* Yan yana resimler için boşluk */
+  transition: transform 0.3s ease; /* Hover animasyonu */
+  background: none; /* Arkaplanı kaldırır */
 }
 
 .image-container:hover {
-  transform: scale(1.1); /* Üzerine gelindiğinde büyütme */
-  z-index: 10; /* Öne çıkma */
+  transform: scale(1.1);
+  z-index: 20;
+  animation-duration: 240s; /* Yavaşlatılmış hız */
 }
 
 .image-container img {
-  width: 150px; /* Sabit genişlik */
-  height: 150px; /* Sabit yükseklik */
-  object-fit: cover; /* Resmin düzgün kırpılması için */
-  border-radius: 10px; /* Köşeleri yuvarlama */
-  transition: box-shadow 0.3s ease; /* Hover'da gölge efekti */
+  width: 120%; /* Resmin genişliğini kapsayıcıya uydur */
+  height: 350px; /* Belirli bir yükseklik ayarla */
+  object-fit: cover; /* Resmin orantısını bozmadan kutuya sığmasını sağlar */
+  border-radius: 10px; /* Resimleri yuvarlatma */
+  transition: box-shadow 0.3s ease; /* Hover gölge animasyonu */
+  background: none; /* Arkaplanı kaldırır */
 }
 
 .image-container:hover img {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hover gölgesi */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Gölge hafifçe eklenmiş */
+  background: none;
 }
 
-.image-container .MuiTypography-subtitle1 {
-  margin-top: 8px; /* Yazının resimden sonra boşluk bırakması */
+.carousel-wrapper {
+  padding-top: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  padding-bottom: 500px; /* Footer üçün boşluq */
 }
-body {
-  display: block; /* Resmin etrafındaki boşlukları kaldırır */
-  max-width: 100%; /* Ekran boyutuna göre ölçeklendirir */
-  height: auto; /* Oranları korur */
+
+.info-section {
+  margin-top: 40px; /* Məlumat bölməsi üçün boşluq */
 }
+

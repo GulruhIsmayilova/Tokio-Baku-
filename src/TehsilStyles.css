@@ -1,0 +1,45 @@
+/* TehsilStyles.css */
+.tehsil-page {
+    display: flex;
+    height: 100vh; /* Sayfanın tamamını kaplasın */
+  }
+  
+  .tehsil-content {
+    flex: 1; /* Sol taraf yazılar */
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8); /* Hafif transparan beyaz arka plan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .tehsil-image {
+    flex: 1; /* Sağ taraf arka plan resmi */
+    background-image: url('./photos/senseichil.jpg'); /* Arka plan resmi buraya */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .tehsil-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Resim üzerinde transparan siyah filtre */
+  }
+  
+  h2 {
+    font-size: 36px;
+    color: #333; /* Başlık rengi */
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #555; /* Paragraf rengi */
+    line-height: 1.6;
+  }
+  

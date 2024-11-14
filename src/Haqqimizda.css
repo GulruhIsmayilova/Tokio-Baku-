@@ -5,7 +5,22 @@
   min-height: 100vh; /* Tam yükseklik */
 }
 
-  
+  /* Başlık için stil */
+/* Başlık için stil */
+.header-title {
+  font-family: 'Arial', sans-serif; /* İstediğiniz yazı tipini buraya ekleyebilirsiniz */
+  color: rgba(0, 0, 0, 0.8); /* Açık siyah tonu */
+  font-size: 1.5rem; /* Daha küçük bir font boyutu */
+  font-weight: 700; /* Kalın yazı stili */
+  text-align: left; /* Sol tarafa hizalama */
+  margin-bottom: 20px; /* Alt boşluk ekleyin */
+  border-radius: 8px; /* Yuvarlak köşeler için */
+  padding: 10px; /* İç boşluk */
+  background-color: rgba(255, 255, 255, 0.1); /* Hafif beyaz arka plan */
+  display: inline-block; /* İçerik alanı kadar genişlik */
+}
+
+
   .image-container1 {
     position: relative;
     width: 100%; /* Genişliği %100 yap */
@@ -22,10 +37,15 @@
     border-radius: 8px; /* Kenarları yuvarlar */
   }
   
-  .text-container {
-    max-width: 800px; /* Maksimum genişlik ayarlandı */
-    margin-right: 20px; /* Sola yakınlaştırmak için margin ekle */
-  }
+  /* Bronz veya açık siyah bir renk ve yuvarlak bir yazı tipi */
+.text-section .custom-text {
+  font-family: 'Arial', sans-serif; /* Eğer daha yuvarlak bir yazı tipi istiyorsanız Google Fonts'tan alternatif bir yazı tipi seçebilirsiniz */
+  color: #A67C52; /* Bu bronz bir renk örneğidir. Eğer açık siyah isterseniz #333333 kullanabilirsiniz */
+  font-size: 1.2rem; /* Font boyutunu biraz artırarak okunabilirliği artırıyoruz */
+  line-height: 1.6; /* Satırlar arasındaki boşluğu düzenliyoruz */
+  font-weight: 400; /* Font ağırlığını hafif tutarak daha yumuşak bir görünüm elde ediyoruz */
+}
+
   h2 {
     color: #242627; /* Açık bir ton renk */
     font-weight: bold; /* Kalın yazı */
@@ -41,7 +61,7 @@
     max-width: 100%; 
   }
   .about-container {
-    background-image: url('./photos/sekil.jpg'); /* Arka plan resmi */
+   
     background-size: cover; /* Resmin alanı kaplamasını sağlar */
     background-position: center; /* Resmi ortalar */
     background-repeat: no-repeat; /* Resmin tekrarlanmamasını sağlar */

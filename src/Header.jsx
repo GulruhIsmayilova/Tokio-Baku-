@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, Box, Typography, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, Menu, MenuItem, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
 import LanguageIcon from '@mui/icons-material/Language';
+import MenuIcon from '@mui/icons-material/Menu'; // Hamburger ikonu
+import { useMediaQuery } from '@mui/material'; // Responsive için gerekli hook
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
 
 function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false); // Drawer menüsü için state
+  const isMobile = useMediaQuery('(max-width: 768px)'); // Ekran genişliğini kontrol etme
 
   const handleLanguageClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -16,6 +19,21 @@ function Header() {
     setAnchorEl(null);
   };
 
+  const toggleDrawer = (open) => () => {
+    setDrawerOpen(open);
+  };
+
+  // Menü öğeleri için ortak yapı
+  const menuItems = [
+    { text: 'Haqqımızda', link: '/haqqimizda' },
+    { text: 'Müəllimlər', link: '/muellimler' },
+    { text: 'Yaponiyada təhsil', link: '/yaponiyada-tehsil' },
+    { text: 'Yaponiyada iş', link: '/yaponiyada-is' },
+    { text: 'Uğurlarımız', link: '/ugurlarimiz' },
+    { text: 'Yaponiyada görməli yerlər', link: '/yaponiyada-gormeli-yerler' },
+    { text: 'Blog', link: '/blog' },
+  ];
+
   return (
     <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#ffffff' }}>
       <Toolbar>
@@ -23,124 +41,63 @@ function Header() {
           <img 
             src="./logo.jpg"
             alt="Logo"
-            style={{ width: '120px', height: 'auto', marginRight: '20px' }}
+            style={{ width: '115px', height: 'auto', marginRight: '20px' }}
           />
         </Link>
 
         <Box sx={{ flexGrow: 1 }} />
 
-        <Button 
-          sx={{ 
-            marginRight: '20px', 
-            fontSize: '1.2rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/haqqimizda">
-          Haqqımızda
-        </Button>
+        {isMobile ? (
+          <>
+            {/* Mobil cihazlar için Hamburger menü ikonu */}
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+              sx={{ color: '#555555' }}
+            >
+              <MenuIcon />
+            </IconButton>
 
-        <Button 
-          sx={{ 
-            marginRight: '20px', 
-            fontSize: '1.2rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/muellimler">
-          Müəllimlər
-        </Button>
+            {/* Drawer (Hamburger menü) */}
+            <Drawer
+              anchor="right"
+              open={drawerOpen}
+              onClose={toggleDrawer(false)}
+            >
+              <List>
+                {menuItems.map((item) => (
+                  <ListItem button key={item.text} component={Link} to={item.link} onClick={toggleDrawer(false)}>
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                ))}
+              </List>
+            </Drawer>
+          </>
+        ) : (
+          <>
+            {/* Masaüstü görünüm için menü butonları */}
+            {menuItems.map((item) => (
+              <Button 
+                key={item.text}
+                sx={{ 
+                  marginRight: '20px', 
+                  fontSize: '1.1rem', 
+                  color: '#555555', 
+                  textTransform: 'none',
+                  fontWeight: 'bold'
+                }} 
+                component={Link} 
+                to={item.link}
+              >
+                {item.text}
+              </Button>
+            ))}
+          </>
+        )}
 
-        <Button 
-          color="inherit"
-          sx={{ 
-            marginRight: '20px', 
-            fontSize: '1.1rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            borderRadius: '20px', // Daha yuvarlak kenarlar için artır
-            boxShadow: 'none',
-            backgroundColor: 'transparent',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/yaponiyada-tehsil">
-          Yaponiyada təhsil
-        </Button>
-
-        <Button 
-          color="inherit"
-          sx={{ 
-            marginRight: '20px', 
-            fontSize: '1.1rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            borderRadius: '8px',
-            boxShadow: 'none',
-            backgroundColor: 'transparent',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/yaponiyada-is">
-          Yaponiyada iş
-        </Button>
-
-        <Button 
-          color="inherit"
-          sx={{ 
-            marginRight: '20px', 
-            fontSize: '1.1rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            borderRadius: '8px',
-            boxShadow: 'none',
-            backgroundColor: 'transparent',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/ugurlarimiz">
-          Uğurlarımız
-        </Button>
-
-        <Button 
-          color="inherit"
-          sx={{ 
-            marginRight: '20px', 
-            fontSize: '1.1rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            borderRadius: '8px',
-            boxShadow: 'none',
-            backgroundColor: 'transparent',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/yaponiyada-gormeli-yerler">
-          Yaponiyada görməli yerlər
-        </Button>
-
-        {/* Blog butonu ve dil ikonu */}
-        <Button 
-          color="inherit"
-          sx={{ 
-            marginRight: '10px', 
-            fontSize: '1.1rem', 
-            color: '#555555', // Açık gri rengi
-            textTransform: 'none',
-            borderRadius: '8px',
-            boxShadow: 'none',
-            backgroundColor: 'transparent',
-            fontWeight: 'bold' // Yazı kalınlığını artır
-          }} 
-          component={Link} 
-          to="/blog">
-          Blog
-        </Button>
-
+        {/* Dil seçimi butonu */}
         <Button
           color="inherit"
           onClick={handleLanguageClick}
@@ -151,7 +108,7 @@ function Header() {
             color: 'blue' 
           }}
         >
-          <i className="fa-solid fa-globe" style={{ marginRight: '5px', fontSize: '1.5rem' }}></i> {/* Font Awesome dil simgesi */}
+          <i className="fa-solid fa-globe" style={{ marginRight: '5px', fontSize: '1.5rem' }}></i>
         </Button>
 
         {/* Dil seçimi menüsü */}
@@ -174,6 +131,5 @@ function Header() {
     </AppBar>
   );
 }
-
 
 export default Header;
