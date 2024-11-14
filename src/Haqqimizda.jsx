@@ -12,8 +12,6 @@ const Haqqimizda = () => {
     "./photos/photo1 (3).jpeg",
     "./photos/photo1 (2).jpeg",
     "./photos/japan.jpeg",
-    "./photos/thumbnail_IMG_8735 (1).jpg",
-    "./photos/IMG_9406.jpeg",
     "./photos/image-01-10-24-01-46.jpeg",
   ];
 

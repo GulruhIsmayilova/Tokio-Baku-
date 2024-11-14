@@ -26,7 +26,6 @@ function Footer() {
       sx={{
         padding: "40px",
         backgroundColor: "#FFFFFF",
-        borderTop: "4px solid #ddd",
         textAlign: "center",
       }}
     >
@@ -44,23 +43,23 @@ function Footer() {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <Root>
-          <Divider>
-            <Link to="/">
-              <Avatar
-                src="/logo.jpg"
-                alt="Logo"
-                sx={{ width: 105, height: 105, cursor: "pointer" }}
-              />
-            </Link>
-          </Divider>        </Root>
-
+            <Divider>
+              <Link to="/">
+                <Avatar
+                  src="/logo.jpg"
+                  alt="Logo"
+                  sx={{ width: 105, height: 105, cursor: "pointer" }}
+                />
+              </Link>
+            </Divider>
+          </Root>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-start",
+              alignItems: "center", // Merkezi hizalama
               marginLeft: "20%",
             }}
           >

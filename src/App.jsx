@@ -6,6 +6,8 @@ import Footer from './Footer';
 import Muellimler from './Muellimler';
 import TeacherDetails from './TeacherDetails';
 import YaponiyadaTəhsil from './YaponiyadaTəhsil'; // Yeni sayfa bileşeni
+import YaponiyadaIs from './YaponiyadaIs';
+import Blog from "./Blog";
 
 const App = () => {
   return (
@@ -17,6 +19,9 @@ const App = () => {
         <Route path="/muellimler" element={<Muellimler />} />
         <Route path="/teacher/:id" element={<TeacherDetails />} />
         <Route path="/yaponiyada-tehsil" element={<YaponiyadaTəhsil />} /> {/* element prop'u ile düzeltilmiş */}
+        <Route path="/yaponiyada-is" element={<YaponiyadaIs />} />
+        <Route path="/teachers/:teacherId" element={<TeacherDetails />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,56 @@
+/* Tam ekran arxa fon */
+.full-screen {
+    width: 100vw;  /* Tam ekran genişliyi */
+    height: 100vh; /* Tam ekran hündürlüyü */
+    display: flex;
+  }
+  
+  /* Grid container: iki hissəyə bölünmə */
+  .grid-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Sol tərəf: Yazılar */
+  .left-side {
+    background-color: #ffffff; /* Ağ fon */
+    display: flex;
+    justify-content: center; /* Mərkəzləşdir */
+    align-items: center;     /* Mərkəzləşdir */
+  }
+  
+  /* Yazılar üçün konteyner */
+  .text-content {
+    padding: 50px; /* Yuxarıdan və altdan boşluq */
+    text-align: center; /* Mərkəzləşdir */
+  }
+  
+  /* Başlıq stili */
+  .heading {
+    color: #2C3E50; /* Qaranlıq mavi */
+    font-size: 48px; /* Daha böyük ölçü */
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Divider stili */
+  .divider {
+    border: none; /* Sərhəd olmadan */
+    border-top: 2px solid #2C3E50; /* Üst sərhəd */
+    margin: 20px 0; /* Yuxarı və aşağıda boşluq */
+  }
+  
+  /* Açıqlama stili */
+  .description {
+    color: #34495E; /* Qara boz */
+    font-size: 20px; /* Daha böyük mətn */
+    line-height: 1.8;
+  }
+  
+  /* Sağ tərəf: Arxa fon şəkli */
+  .right-side {
+    background: url('your-background-image.jpg') no-repeat center center/cover; /* Şəkil URL-sini buraya əlavə et */
+    width: 100%; /* Tam genişlik */
+    height: 100%; /* Tam hündürlük */
+  }
+  

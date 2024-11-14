@@ -1,13 +1,8 @@
-@keyframes slide {
-  0% {
-    transform: translateX(0); /* Başlangıç */
-  }
-  100% {
-    transform: translateX(-100%); /* Bitiş - Tam kaydır */
-  }
-}
-
 .carousel-container {
+  position: relative;
+  overflow: hidden; /* Konteynerin içərisində görünməyən şəkillərin gizlədilməsi üçün */
+  border-radius: 10px; /* Künclərin yuvarlaqlaşdırılması */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hava effektini artırmaq üçün kölgə */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,25 +13,32 @@
   animation: slide 120s infinite linear; /* 120 saniyede tamamla ve sonsuz tekrarla */
 }
 
-.carousel-container:hover {
-  animation-play-state: paused; /* Fare üzerine gelindiğinde durdur */
+
+.slideshow {
+  display: flex; /* Şəkilləri yan-yana sıralamaq üçün */
+  width: 900%; /* Bütün şəkillərin yerləşməsi üçün genişlik */
+  animation: moveSlideshow 45s linear infinite; /* Slayd animasiyası */
+  background: none;
+}
+
+.slideshow img {
+  width: 33.33%; /* Hər bir şəkilin genişliyi (3 şəkil üçün) */
+  height: auto; /* Şəkillərin proporsiyalarını qorumaq üçün */
+  border-radius: 10px; /* Şəkillərin künclərinin yuvarlaqlaşdırılması */
 }
 
 .image-container {
+  text-align: center; /* Mərkəzə hizalanma */
+  margin: 10px; /* Şəkillər arasında boşluq */
   position: relative;
   margin: 0 65px; /* Yan yana resimler için boşluk */
   transition: transform 0.3s ease; /* Hover animasyonu */
   background: none; /* Arkaplanı kaldırır */
 }
 
-.image-container:hover {
-  transform: scale(1.1);
-  z-index: 20;
-  animation-duration: 240s; /* Yavaşlatılmış hız */
-}
-
 .image-container img {
-  width: 120%; /* Resmin genişliğini kapsayıcıya uydur */
+  transition: transform 0.3s; /* Hover zamanı animasiya */
+  width: 140%; /* Resmin genişliğini kapsayıcıya uydur */
   height: 350px; /* Belirli bir yükseklik ayarla */
   object-fit: cover; /* Resmin orantısını bozmadan kutuya sığmasını sağlar */
   border-radius: 10px; /* Resimleri yuvarlatma */
@@ -45,21 +47,34 @@
 }
 
 .image-container:hover img {
+  transform: scale(1.05); /* Hover zamanı şəkilin böyüdülməsi */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Gölge hafifçe eklenmiş */
   background: none;
+  
+}
+
+@keyframes moveSlideshow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Şəkilləri sola hərəkət etdir */
+  }
+}
+
+h2, h3 {
+  color: #333; /* Başlıqların rəngi */
+  margin-bottom: 20px; /* Başlıqların altındakı boşluq */
 }
 
 .carousel-wrapper {
-  padding-top: 300px;
-  display: flex;
+  background-color: #f9f9f9; /* Arxa planın rəngi */
+  padding: 40px 20px; /* Yuxarıdan və altdan padding */
+  border-radius: 10px; /* Yuvarlaq künclər */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Hava effekti üçün kölgə */
+  background: none;
+  padding-top: 200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: none;
-  padding-bottom: 500px; /* Footer üçün boşluq */
 }
-
-.info-section {
-  margin-top: 40px; /* Məlumat bölməsi üçün boşluq */
-}
-

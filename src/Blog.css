@@ -1,0 +1,75 @@
+.blog-container {
+  padding: 40px 20px; /* Konteynırın içine üst ve alt padding ekledik */
+  background-color: #f0f4f8; /* Hafif gri-beyaz arka plan rengi */
+}
+
+.blog-card {
+  padding: 150px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #9e0000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 20px; /* Kartlar arasına boşluk ekledik */
+}
+* {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px; /* px kullanarak da büyütebilirsiniz */
+  line-height: 2.43;
+  letter-spacing: 0.01071em;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  background-color: #8d5dfc; /* Başlık kısmına renk ekledik */
+  color: rgb(255, 255, 255); /* Başlık yazısının rengini beyaz yaptık */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.blog-card-content {
+  font-size: 2em;
+  color: #444;
+  line-height: 1.8;
+}
+
+.blog-card:nth-child(1) {
+  background-color: #ffffff; /* İlk kart için pembe arka plan */
+}
+
+.blog-card:nth-child(2) {
+  background-color: #d6f0ff; /* İkinci kart için mavi arka plan */
+}
+
+.blog-card:nth-child(3) {
+  background-color: #fff7cc; /* Üçüncü kart için sarı arka plan */
+}
+
+.blog-card:nth-child(4) {
+  background-color: #f0f9e8; /* Dördüncü kart için yeşil arka plan */
+}
+
+.blog-card:nth-child(5) {
+  background-color: #e8f0f9; /* Beşinci kart için açık mavi arka plan */
+}
+
+.blog-card:nth-child(6) {
+  background-color: #e8f9f0; /* Altıncı kart için açık yeşil arka plan */
+}
+.blog-card-title {
+  font-size: 1.8rem;
+}
+
+.blog-card-content {
+  font-size: 1.2rem;
+}
