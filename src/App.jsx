@@ -8,6 +8,10 @@ import TeacherDetails from './TeacherDetails';
 import YaponiyadaTəhsil from './YaponiyadaTəhsil'; // Yeni sayfa bileşeni
 import YaponiyadaIs from './YaponiyadaIs';
 import Blog from "./Blog";
+import ErrorPage from "./ErrorPage"; // 404 səhifəsi
+import Ugurlarimiz from "./Ugurlarimiz";
+import YaponiyadaGormeliYerler from "./YaponiyadaGormeliYerler";
+
 
 const App = () => {
   return (
@@ -22,6 +26,11 @@ const App = () => {
         <Route path="/yaponiyada-is" element={<YaponiyadaIs />} />
         <Route path="/teachers/:teacherId" element={<TeacherDetails />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/ugurlarimiz" element={<Ugurlarimiz />} />
+        <Route path="/yaponiyada-gormeli-yerler" element={<YaponiyadaGormeliYerler />} />
+    
+        {/* 404 səhifəsi üçün default route */}
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </Router>

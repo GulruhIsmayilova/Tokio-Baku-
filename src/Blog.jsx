@@ -7,93 +7,140 @@ import CardActionArea from '@mui/material/CardActionArea';
 import Grid from '@mui/material/Grid';
 
 export default function ActionAreaCards() {
-  // Kartlar için verileri bir dizi olarak oluşturuyoruz
   const cards = [
     {
       id: 1,
-      image: './photos/images (1).jfif',  // Kart 1 için resim
-      title: '手を引く　てをひく',  // Kart 1 için başlık
-      description: <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        Te’wo hiku
-        <br />
-        Əl çəkmək
-        <br />
-        <strong style={{ color: 'red' }}>彼はプロジェクトから手を引きました。</strong>
-        <br />
-        <strong>Karewa purojekutokara tewo hikimashita</strong>
-        <br />
-        O projekten əl çəkdi
-      </Typography>
+      image: './photos/DALL·E 2024-12-12 18.22.45 - A cartoon-style illustration depicting a person walking away from a project. The person appears thoughtful, with their back turned toward a table fill.webp',
+      title: '手を引く　てをひく',
+      description: (
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          Te’wo hiku
+          <br />
+          Əl çəkmək
+          <br />
+          <strong style={{ color: 'red' }}>彼はプロジェクトから手を引きました。</strong>
+          <br />
+          <strong>Karewa purojekutokara tewo hikimashita</strong>
+          <br />
+          O projekten əl çəkdi
+        </Typography>
+      ),
     },
     {
       id: 2,
-      image: './photos/1740030 (1).jpg',  // Kart 2 için resim
-      title: '手間がかかる',  // Kart 2 için başlık
-      description: <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        <strong>てまがかかる
-        <br />
-          </strong>əziyyət tələb edir, vaxt aparir.
-        <br />そんなことは手間がかかる
-
-        <br />
-        <strong>Sonna koto wa tema ga kakaru</strong>
-        <strong style={{ color: 'red' }}>
+      image: './photos/1740030 (1).jpg',
+      title: '手間がかかる',
+      description: (
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          <strong>てまがかかる
+            <br />
           </strong>
+          əziyyət tələb edir, vaxt aparır.
+          <br />
+          そんなことは手間がかかる
+          <br />
+          <strong>Sonna koto wa tema ga kakaru</strong>
+          <br />
           elə şeylər əziyyət tələb edir.
-      </Typography>
+        </Typography>
+      ),
     },
     {
       id: 3,
-      image: './photos/f51e98bae6c20430ef9bc124bb7f9665_t.jpeg',  // Kart 3 için resim
-      title: 'Lizard 3',  // Kart 3 için başlık
-      description: 'There are over 6,000 species of lizards in the world, each with its own unique traits.',  // Kart 3 için açıklama
+      image: './photos/f51e98bae6c20430ef9bc124bb7f9665_t.jpeg',
+      title: '山積み　やまづみ',
+      description: (
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          やまづみ
+          <br />
+          宿題は山積みで、終わらない
+          <br />
+          <strong style={{ color: 'red' }}>
+            Ev Tapşırıqları dağ kimi yığılıb, bitmir.
+          </strong>
+          <br />
+          宿題は山積みで、終わらない
+          <br />
+          
+        </Typography>
+      ),
     },
     {
       id: 4,
-      image: './photos/image4.jpg',  // Kart 4 için resim
-      title: 'Lizard 4',  // Kart 4 için başlık
-      description: 'Lizards are often characterized by their long bodies, tails, and scaly skin.',  // Kart 4 için açıklama
+      image: './photos/card.jfif',
+      title: '言葉を遮る',
+      description:
+      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+    ことばをさえぎる
+      <br />
+      Kotoba’wo saegiru
+      <br />
+      <strong style={{ color: 'red' }}></strong>
+      <strong> 相手の言葉を遮るのはよくないことだ。</strong>
+      <br />
+      Qarşı tərəfin sözün kəsmək yaxşı deyil.
+    </Typography>
     },
     {
       id: 5,
-      image: './photos/image5.jpg',  // Kart 5 için resim
-      title: 'Lizard 5',  // Kart 5 için başlık
-      description: 'Lizards can be found in almost every part of the world, except Antarctica.',  // Kart 5 için açıklama
+      image: './photos/image5.jpg',
+      title: 'Lizard 5',
+      description:
+        'Lizards can be found in almost every part of the world, except Antarctica.',
     },
     {
       id: 6,
-      image: './photos/image6.jpg',  // Kart 6 için resim
-      title: 'Lizard 6',  // Kart 6 için başlık
-      description: 'Lizards are fascinating creatures with remarkable adaptations to their environments.',  // Kart 6 için açıklama
+      image: './photos/image6.jpg',
+      title: 'Lizard 6',
+      description:
+        'Lizards are fascinating creatures with remarkable adaptations to their environments.',
+    },
+    {
+      id: 5,
+      image: './photos/image5.jpg',
+      title: 'Lizard 5',
+      description:
+        'Lizards can be found in almost every part of the world, except Antarctica.',
+    },
+    {
+      id: 6,
+      image: './photos/image6.jpg',
+      title: 'Lizard 6',
+      description:
+        'Lizards are fascinating creatures with remarkable adaptations to their environments.',
     },
   ];
+    
+
 
   return (
     <Grid 
       container 
-      spacing={2} 
-      justifyContent="center" // Yatayda ortalama
-      alignItems="center" // Dikeyde ortalama
-      sx={{ minHeight: '100vh', paddingTop: 14 }} // Ekran yüksekliğini kapsayacak şekilde ayarlama ve üst padding ekleme
+      spacing={4} 
+      justifyContent="center" 
+      alignItems="flex-start" 
+      sx={{
+        minHeight: '100vh',
+        padding: 2,
+        paddingTop: 15, // İç kenar boşluğu
+      }}
     >
       {cards.map((card) => (
-        <Grid item xs={12} sm={6} md={3} key={card.id} sx={{ ml: 2 }}> {/* Sol tarafta boşluk */}
-          <Card sx={{ maxWidth: 345, padding: 2 }}>
+        <Grid item xs={12} sm={6} md={4} lg={3} key={card.id}>
+          <Card sx={{ maxWidth: 345, mx: 'auto' }}>
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="200"  // Resmin yüksekliğini sabitliyoruz
-                image={card.image}  // Dinamik görsel kullanımı
-                alt={card.title}  // Dinamik alt metin kullanımı
-                sx={{ objectFit: 'cover' }}  // Resmi alana uyacak şekilde kırpıyoruz
+                height="200"
+                image={card.image}
+                alt={card.title}
+                sx={{ objectFit: 'cover' }}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {card.title} {/* Dinamik başlık */}
+                  {card.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  {card.description} {/* Dinamik açıklama */}
-                </Typography>
+                {card.description}
               </CardContent>
             </CardActionArea>
           </Card>

@@ -6,17 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   gap: 20px;
   padding: 20px;
+  animation: slide 120s infinite linear; /* 120 saniyədə tamlayıb sonsuz təkrarla */
   background: none;
-  animation: slide 120s infinite linear; /* 120 saniyede tamamla ve sonsuz tekrarla */
 }
-
 
 .slideshow {
   display: flex; /* Şəkilləri yan-yana sıralamaq üçün */
-  width: 900%; /* Bütün şəkillərin yerləşməsi üçün genişlik */
   animation: moveSlideshow 45s linear infinite; /* Slayd animasiyası */
   background: none;
 }
@@ -31,26 +28,25 @@
   text-align: center; /* Mərkəzə hizalanma */
   margin: 10px; /* Şəkillər arasında boşluq */
   position: relative;
-  margin: 0 65px; /* Yan yana resimler için boşluk */
-  transition: transform 0.3s ease; /* Hover animasyonu */
-  background: none; /* Arkaplanı kaldırır */
+  margin: 0 65px; /* Yan yana şəkillər üçün boşluq */
+  transition: transform 0.3s ease; /* Hover animasiyası */
+  background: none; /* Arxa planı silir */
 }
 
 .image-container img {
   transition: transform 0.3s; /* Hover zamanı animasiya */
-  width: 140%; /* Resmin genişliğini kapsayıcıya uydur */
-  height: 350px; /* Belirli bir yükseklik ayarla */
-  object-fit: cover; /* Resmin orantısını bozmadan kutuya sığmasını sağlar */
-  border-radius: 10px; /* Resimleri yuvarlatma */
-  transition: box-shadow 0.3s ease; /* Hover gölge animasyonu */
-  background: none; /* Arkaplanı kaldırır */
+  width: 140%; /* Şəkilin genişliyini kapsayıcıya uyğunlaşdır */
+  height: 350px; /* Təyin edilmiş hündürlük */
+  object-fit: cover; /* Şəkilin proporsiyalarını qoruyur */
+  border-radius: 10px; /* Şəkilləri yuvarlaqlaşdırır */
+  transition: box-shadow 0.3s ease; /* Hover kölgə animasiyası */
+  background: none;
 }
 
 .image-container:hover img {
   transform: scale(1.05); /* Hover zamanı şəkilin böyüdülməsi */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Gölge hafifçe eklenmiş */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Gölge effekt */
   background: none;
-  
 }
 
 @keyframes moveSlideshow {
@@ -60,11 +56,6 @@
   100% {
     transform: translateX(-100%); /* Şəkilləri sola hərəkət etdir */
   }
-}
-
-h2, h3 {
-  color: #333; /* Başlıqların rəngi */
-  margin-bottom: 20px; /* Başlıqların altındakı boşluq */
 }
 
 .carousel-wrapper {
