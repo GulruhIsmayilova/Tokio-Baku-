@@ -9,8 +9,27 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Haqqimizda = () => {
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <Box
       sx={{
@@ -73,109 +92,264 @@ const Haqqimizda = () => {
         </Box>
       </motion.div>
 
-      {/* Content Section */}
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <Container maxWidth="lg" sx={{ py: 4 }}>
-          <Grid container spacing={4} alignItems="center">
-            {/* Text Section */}
-            <Grid item xs={12} md={7}>
+        <Container
+          maxWidth="lg"
+          sx={{ py: 4, px: 0, mx: "0", paddingLeft: 20, marginLeft: 20 }}
+        >
+          <Grid container spacing={4} sx={{ justifyContent: "space-between" }}>
+            {/* Left Section (Text Content) */}
+            <Grid item xs={12} md={6}>
               <Box sx={{ textAlign: "left" }}>
                 <Typography
                   variant="h4"
                   component="h1"
                   gutterBottom
-                  sx={{ fontWeight: 700, color: "#333333", textAlign: "center" }}
+                  sx={{ fontWeight: 700, color: "#333333", fontSize: "36px" }}
                 >
-                  Haqqımızda
+                  <strong>Haqqımızda</strong>
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ fontSize: "16px", lineHeight: "1.8em", color: "#555555", textAlign: "justify" }}
+                  sx={{
+                    fontSize: "20px",
+                    lineHeight: "1.8em",
+                    color: "#555555",
+                  }}
                 >
                   <strong>Kursumuz Haqqında:</strong>
                   <br />
-                  Kursumuzda Yapon dilini fərdi və ya qrup şəklində öyrənmək imkanı təqdim edirik. Təcrübəli
-                  müəllimlərimiz Yaponiyada uzun illər yaşamış və Yapon dili üzrə yüksək səviyyəli mütəxəssislərdir.
-                  Tədris prosesimiz yalnız dil öyrənməkdən ibarət deyil; həm də mədəniyyətlə əlaqələrinizi gücləndirmək
-                  üçün xüsusi imkanlar yaradırıq.
+                  Kursumuzda <em>Yapon dilini fərdi</em> və ya qrup şəklində
+                  öyrənmək imkanı təqdim edirik. Təcrübəli müəllimlərimiz
+                  Yaponiyada uzun illər yaşamış və Yapon dili üzrə{" "}
+                  <em>yüksək səviyyəli mütəxəssislərdir</em>. Tədris prosesimiz
+                  yalnız dil öyrənməkdən ibarət deyil; həm də mədəniyyətlə
+                  əlaqələrinizi gücləndirmək üçün xüsusi imkanlar yaradırıq.
                   <br />
                   <br />
                   <strong>Danışıq Klubları və Mədəniyyət Dərsləri:</strong>
                   <br />
-                  Yapon dilini müəyyən səviyyədə mənimsədikdən sonra sizi müntəzəm olaraq təşkil etdiyimiz danışıq
-                  klublarına dəvət edirik. Bu klublarda:
+                  Yapon dilini müəyyən səviyyədə mənimsədikdən sonra sizi
+                  müntəzəm olaraq təşkil etdiyimiz danışıq klublarına dəvət
+                  edirik.
                 </Typography>
                 <List>
                   <ListItem>
-                    <ListItemText primary="Yaponlarla birgə iştirak etmək" />
+                    <ListItemText
+                      primary={<em>Yaponlarla birgə iştirak etmək</em>}
+                      primaryTypographyProps={{
+                        fontSize: "20px",
+                        color: "#555555",
+                      }}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary="Öyrəndiklərinizi müzakirə etmək" />
+                    <ListItemText
+                      primary={<em>Öyrəndiklərinizi müzakirə etmək</em>}
+                      primaryTypographyProps={{
+                        fontSize: "20px",
+                        color: "#555555",
+                      }}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary="Yapon mədəniyyəti və gündəlik həyatına dair suallarınıza cavab tapmaq" />
+                    <ListItemText
+                      primary={
+                        <em>
+                          Yapon mədəniyyəti və gündəlik həyatına dair
+                          suallarınıza cavab tapmaq
+                        </em>
+                      }
+                      primaryTypographyProps={{
+                        fontSize: "20px",
+                        color: "#555555",
+                      }}
+                    />
                   </ListItem>
                 </List>
                 <Typography
                   variant="body1"
-                  sx={{ fontSize: "16px", lineHeight: "1.8em", color: "#555555", mt: 2 }}
+                  sx={{
+                    fontSize: "20px",
+                    lineHeight: "1.8em",
+                    color: "#555555",
+                    mt: 2,
+                  }}
                 >
-                  Bu fəaliyyətlər, yalnız dil biliklərinizi inkişaf etdirmir, eyni zamanda motivasiya və
-                  özünəinamınızı artırır.
+                  Bu fəaliyyətlər, yalnız dil biliklərinizi inkişaf etdirmir,
+                  eyni zamanda{" "}
+                  <strong> motivasiya və özünəinamınızı artırır.</strong>
                   <br />
                   <br />
                   <strong>Yaponiyada Təhsil və Karyera Dəstəyi:</strong>
                   <br />
-                  Kursumuzun əsas məqsədi, dil biliklərini praktikaya tətbiq edərək Yaponiyada təhsil almaq və ya işlə
-                  təmin olunmaq istəyənlərə dəstək verməkdir.
+                  Kursumuzun əsas məqsədi, <em>Yaponiyada təhsil almaq</em> və
+                  ya işlə təmin olunmaq istəyənlərə dəstək verməkdir.
                   <br />
                   <br />
                   <strong>Kursumuzun Faydaları:</strong>
                 </Typography>
                 <List>
                   <ListItem>
-                    <ListItemText primary="Yapon dilini həm praktik, həm də effektiv şəkildə öyrənmək" />
+                    <ListItemText
+                      primary={
+                        <em>
+                          Yapon dilini həm praktik, həm də effektiv şəkildə
+                          öyrənmək
+                        </em>
+                      }
+                      primaryTypographyProps={{
+                        fontSize: "20px",
+                        color: "#555555",
+                      }}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary="Yaponiyada təhsil və karyera qurmaq üçün dəstək almaq" />
+                    <ListItemText
+                      primary={
+                        <em>
+                          Yaponiyada təhsil və karyera qurmaq üçün dəstək almaq
+                        </em>
+                      }
+                      primaryTypographyProps={{
+                        fontSize: "20px",
+                        color: "#555555",
+                      }}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary="Mədəniyyətlə əlaqələrinizi genişləndirərək dili daha yaxşı mənimsəmək" />
+                    <ListItemText
+                      primary={
+                        <em>
+                          Mədəniyyətlə əlaqələrinizi genişləndirərək dili daha
+                          yaxşı mənimsəmək
+                        </em>
+                      }
+                      primaryTypographyProps={{
+                        fontSize: "20px",
+                        color: "#555555",
+                      }}
+                    />
                   </ListItem>
                 </List>
                 <Typography
                   variant="body1"
-                  sx={{ fontSize: "16px", lineHeight: "1.8em", color: "#555555", mt: 2 }}
+                  sx={{
+                    fontSize: "20px",
+                    lineHeight: "1.8em",
+                    color: "#555555",
+                    mt: 2,
+                  }}
                 >
-                  Bizimlə Yapon dilini öyrənərək, həm şəxsi, həm də peşəkar həyatınızda yeni bir qapı aça bilərsiniz!
+                  <strong>
+                    Bizimlə Yapon dilini öyrənərək, həm şəxsi, həm də peşəkar
+                    həyatınızda yeni bir qapı aça bilərsiniz!
+                  </strong>
                 </Typography>
               </Box>
             </Grid>
 
-            {/* Image Section */}
+            {/* Right Section (Slider) */}
             <Grid item xs={12} md={5}>
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "center",
+                  justifyContent: "flex-start",
                   alignItems: "center",
                   height: "100%",
+                  flexDirection: "column",
                 }}
               >
-                <img
-                  src="/photos/sakuraa.webp"
-                  alt="Haqqımızda Şəkil"
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                />
+                <Box sx={{ width: "140%", paddingLeft: 20, marginLeft: 20 }}>
+                <Slider {...sliderSettings}>
+  <Box
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "20px", // Üst ve alt resimler arasındaki boşluk
+    }}
+  >
+    {/* Üstteki resimler */}
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px", // Resimler arasındaki yatay boşluk
+      }}
+    >
+      <Box>
+        <img
+          src="/photos/05877f8a-6b50-47bc-8e15-3bdf5b0f19ed.webp"
+          alt="Samurai 1"
+          style={{
+            width: "200px",
+            borderRadius: "10px",
+            height: "auto",
+            transform: "rotate(-10deg)", // Eğiklik
+            transition: "transform 0.3s",
+          }}
+        />
+      </Box>
+      <Box>
+        <img
+          src="/photos/samuesaku.webp"
+          alt="Samurai 2"
+          style={{
+            width: "200px",
+            borderRadius: "10px",
+            height: "auto",
+            transform: "rotate(-5deg)", // Eğiklik
+            transition: "transform 0.3s",
+          }}
+        />
+      </Box>
+    </Box>
+
+    {/* Alttaki resimler */}
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px", // Resimler arasındaki yatay boşluk
+      }}
+    >
+      <Box>
+        <img
+          src="/photos/azersam.webp"
+          alt="Samurai 3"
+          style={{
+            width: "200px",
+            borderRadius: "10px",
+            height: "auto",
+            transform: "rotate(5deg)", // Eğiklik
+            transition: "transform 0.3s",
+          }}
+        />
+      </Box>
+      <Box>
+        <img
+          src="/photos/samuraydesu.webp"
+          alt="Samurai 4"
+          style={{
+            width: "200px",
+            borderRadius: "10px",
+            height: "auto",
+            transform: "rotate(10deg)", // Eğiklik
+            transition: "transform 0.3s",
+          }}
+        />
+      </Box>
+    </Box>
+  </Box>
+</Slider>
+
+                </Box>
               </Box>
             </Grid>
           </Grid>
@@ -185,4 +359,4 @@ const Haqqimizda = () => {
   );
 };
 
-export default Haqqimizda; 
+export default Haqqimizda;
